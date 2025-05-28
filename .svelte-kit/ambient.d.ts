@@ -81,7 +81,6 @@ declare module '$env/static/private' {
 	export const MSYSTEM_CHOST: string;
 	export const MSYSTEM_PREFIX: string;
 	export const NODE: string;
-	export const NODE_ENV: string;
 	export const npm_command: string;
 	export const npm_config_cache: string;
 	export const npm_config_engine_strict: string;
@@ -99,6 +98,7 @@ declare module '$env/static/private' {
 	export const npm_lifecycle_event: string;
 	export const npm_lifecycle_script: string;
 	export const npm_node_execpath: string;
+	export const npm_package_engines_node: string;
 	export const npm_package_json: string;
 	export const npm_package_name: string;
 	export const npm_package_version: string;
@@ -237,7 +237,6 @@ declare module '$env/dynamic/private' {
 		MSYSTEM_CHOST: string;
 		MSYSTEM_PREFIX: string;
 		NODE: string;
-		NODE_ENV: string;
 		npm_command: string;
 		npm_config_cache: string;
 		npm_config_engine_strict: string;
@@ -255,6 +254,7 @@ declare module '$env/dynamic/private' {
 		npm_lifecycle_event: string;
 		npm_lifecycle_script: string;
 		npm_node_execpath: string;
+		npm_package_engines_node: string;
 		npm_package_json: string;
 		npm_package_name: string;
 		npm_package_version: string;
