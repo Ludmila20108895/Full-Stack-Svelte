@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"postbuild": "mkdir .svelte-kit\\output 2>nul & echo /*> .svelte-kit\\output\\_headers && echo   X-Frame-Options: DENY>> .svelte-kit\\output\\_headers"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
