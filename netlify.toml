@@ -1,5 +1,6 @@
 [build]
-  command = "node netlify-build.js"
+    command = "npm run build && npm run postbuild"
+
 
   publish = ".svelte-kit/output"
 
