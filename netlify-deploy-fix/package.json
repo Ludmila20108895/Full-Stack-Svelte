@@ -1,0 +1,19 @@
+{
+  "name": "explorer-svelte",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "node scripts/build.js && npm run postbuild",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "postbuild": "node scripts/create-headers.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
