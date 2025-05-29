@@ -1,19 +1,10 @@
-// scripts/build.js
-import { build } from '@sveltejs/kit/cli';
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { execSync } from 'child_process';
 
 try {
-	console.log(' Changing to project root...');
-	process.chdir(resolve(__dirname, '..'));
-
-	console.log(' Starting SvelteKit build...');
-	await build();
-
-	console.log(' SvelteKit build completed.');
-} catch (err) {
-	console.error(' Build error:', err);
+	console.log(' Running: svelte-kit build');
+	execSync('npx svelte-kit build', { stdio: 'inherit' });
+	console.log(' Build finished.');
+} catch (error) {
+	console.error(' Build failed:', error.message);
 	process.exit(1);
 }
