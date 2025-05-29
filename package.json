@@ -6,13 +6,13 @@
 	"scripts": {
 		"dev": "vite dev",
 		"prebuild": "node scripts/create-headers.js",
-		"build": "svelte-kit build",
+		"build": "vite build",
+		"postbuild": "node scripts/create-headers.js",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint .",
-		"postbuild": "node scripts/create-headers.js"
+		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
