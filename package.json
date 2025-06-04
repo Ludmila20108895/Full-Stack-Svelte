@@ -6,19 +6,19 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "svelte-kit preview",
-		"start": "svelte-kit preview --port $PORT",
+		
+		"start": "node build",
 
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
+	"engines": {
+		"node": ">=18.0.0"
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
-		"@sveltejs/adapter-auto": "^6.0.1",
-		"@sveltejs/adapter-netlify": "^5.0.2",
 		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/kit": "^2.21.1",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
@@ -54,8 +54,7 @@
 		"lucia": "^2.7.7",
 		"mongoose": "^8.15.0",
 		"uuid": "^11.1.0"
-	},
-	"engines": {
-		"node": ">=18.0.0"
 	}
+}
+
 }
