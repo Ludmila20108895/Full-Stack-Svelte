@@ -56,21 +56,9 @@ Password: Pass123456
 
 - Deployment: Render
 
-## Project Structure
 
-explorer-svelte/
-├── src/
-│ ├── routes/ # SvelteKit route endpoints
-│ ├── lib/ # Shared logic and helpers
-│ ├── components/ # UI components
-│ ├── stores/ # State management
-│ └── hooks/ # Handle auth/session hooks
-├── static/ # Public assets
-├── .env # Environment configuration
-├── svelte.config.js, vite.config.ts, etc.
-└── ...
 
-## 🛠 Setup Instructions
+## Setup Instructions
 
 ### 1. Install Dependencies
 
