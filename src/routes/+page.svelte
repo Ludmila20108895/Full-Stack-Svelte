@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'bulma/css/bulma.min.css';
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 

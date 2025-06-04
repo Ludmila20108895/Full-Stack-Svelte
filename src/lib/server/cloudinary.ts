@@ -10,7 +10,7 @@ cloudinary.config({
 console.log('Cloudinary config:', {
 	name: process.env.CLOUDINARY_CLOUD_NAME,
 	key: process.env.CLOUDINARY_API_KEY,
-	secret: process.env.CLOUDINARY_API_SECRET ? '✔️ present' : '❌ missing'
+	secret: process.env.CLOUDINARY_API_SECRET ? ' present' : ' missing'
 });
 
 export default cloudinary;

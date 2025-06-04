@@ -12,7 +12,14 @@
 			const result = await signInWithPopup(auth, githubProvider);
 			const user = result.user;
 
-			console.log(' Firebase login success:', user.email);
+			console.log('GitHub user object:', user);
+
+			if (!user.email) {
+				alert(
+					"GitHub account doesn't provide an email. Please set your email to public or use Google login."
+				);
+				return;
+			}
 
 			const res = await fetch('/api/auth/save-user', {
 				method: 'POST',
@@ -24,13 +31,14 @@
 				})
 			});
 
-			if (!res.ok) {
-				console.error('Failed to save user:', await res.text());
-				alert('Failed to log in');
+			const resultData = await res.json();
+			if (!res.ok || !resultData.success) {
+				console.error('Failed to save user:', resultData.error);
+				alert('Login failed. Please try again.');
 				return;
 			}
 
-			window.location.href = '/pois'; // Redirect to the protected page after successful login
+			window.location.href = '/pois';
 		} catch (err) {
 			console.error('Firebase GitHub login failed:', err);
 			alert('Login failed. Please try again.');

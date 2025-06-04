@@ -1,0 +1,1 @@
+import{f as t,a as e}from"./Cne19o6N.js";import"./faPC8McD.js";var s=t('<footer class="has-text-centered has-text-grey mt-6 mb-4"><p><strong>Explorer:</strong> All rights reserved.</p></footer>');function f(r){var o=s();e(r,o)}export{f as F};

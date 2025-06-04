@@ -21,6 +21,49 @@
 
 	const VITE_GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 	console.log('Loaded Google Maps Key:', VITE_GOOGLE_MAPS_API_KEY);
+
+	let currentImageIndex = 0;
+	let lightboxIndex: number | null = null;
+
+	function selectImage(index: number) {
+		currentImageIndex = index;
+	}
+
+	function nextImage() {
+		if (currentImageIndex < data.poi.images.length - 1) currentImageIndex++;
+	}
+
+	function prevImage() {
+		if (currentImageIndex > 0) currentImageIndex--;
+	}
+
+	function openLightbox(index: number) {
+		lightboxIndex = index;
+		document.body.classList.add('modal-open');
+	}
+
+	function closeLightbox() {
+		lightboxIndex = null;
+		document.body.classList.remove('modal-open');
+	}
+
+	function nextInLightbox() {
+		if (lightboxIndex !== null && lightboxIndex < data.poi.images.length - 1) {
+			lightboxIndex++;
+		}
+	}
+
+	function prevInLightbox() {
+		if (lightboxIndex !== null && lightboxIndex > 0) {
+			lightboxIndex--;
+		}
+	}
+
+	function handleLightboxKey(event: KeyboardEvent) {
+		if (event.key === 'Escape') closeLightbox();
+		if (event.key === 'ArrowRight') nextInLightbox();
+		if (event.key === 'ArrowLeft') prevInLightbox();
+	}
 </script>
 
 <NavbarLoggedIn />
@@ -107,33 +150,38 @@
 			</div>
 		</div>
 
-		<!-- Image Gallery -->
+		<!-- Photo Album -->
 		<div class="box mt-5">
 			<h2 class="title is-4 has-text-primary">Photo Album</h2>
+
 			{#if data.poi.images.length > 0}
-				<div style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-					{#each data.poi.images as img}
-						<div
-							style="display:inline-block; margin-right:15px; width:150px; height:150px; position:relative;"
-						>
-							<a href={img} target="_blank" title="View Full Image">
+				<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+					{#each data.poi.images as img, index}
+						<div style="position: relative; width: 150px;">
+							<button
+								type="button"
+								on:click={() => openLightbox(index)}
+								style="all: unset; display: block; cursor: zoom-in;"
+								aria-label={`Open image ${index + 1}`}
+							>
 								<img
 									src={img}
-									alt=""
-									style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+									alt={`Memory photo ${index + 1}`}
+									style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;"
 								/>
-							</a>
+							</button>
 
+							<!-- Delete -->
 							<form
 								method="GET"
 								action={`/api/pois/${data.poi._id}/images/${encodeURIComponent(img)}/delete`}
-								style="position: absolute; bottom: 5px; right: 5px; margin: 0;"
+								style="margin-top: 5px; text-align: right;"
 							>
-								<!-- svelte-ignore a11y_consider_explicit_label -->
 								<button
 									type="submit"
-									class="button is-warning is-rounded is-small delete-button"
+									class="button is-warning is-rounded is-small"
 									title="Delete this image"
+									aria-label="Delete this image"
 								>
 									<span class="icon is-small"><i class="fas fa-trash"></i></span>
 								</button>
@@ -157,6 +205,34 @@
 			</a>
 		</div>
 	</div>
+
+	<!-- Lightbox Modal -->
+	{#if lightboxIndex !== null}
+		<div
+			class="lightbox"
+			role="dialog"
+			aria-modal="true"
+			aria-label="Fullscreen image viewer"
+			tabindex="0"
+		>
+			<div class="lightbox-content">
+				<img
+					src={data.poi.images[lightboxIndex]}
+					alt={`Photo ${lightboxIndex + 1}`}
+					class="lightbox-image"
+				/>
+
+				<div class="lightbox-controls">
+					<button on:click={prevInLightbox} disabled={lightboxIndex === 0}>⬅ Prev</button>
+					<button on:click={nextInLightbox} disabled={lightboxIndex === data.poi.images.length - 1}>
+						Next ➡
+					</button>
+				</div>
+
+				<button class="lightbox-close" on:click={closeLightbox} aria-label="Close modal">✖</button>
+			</div>
+		</div>
+	{/if}
 </section>
 
 <Footer />
@@ -175,5 +251,60 @@
 		justify-content: center;
 		gap: 8px;
 		font-size: 1.1rem;
+	}
+
+	.lightbox {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(10, 10, 10, 0.95);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1000;
+	}
+
+	.lightbox-content {
+		position: relative;
+		max-width: 100vw;
+		max-height: 100vh;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+		box-sizing: border-box;
+	}
+
+	.lightbox-image {
+		max-width: 90vw;
+		max-height: 90vh;
+		display: block;
+		margin: 0 auto;
+		border-radius: 8px;
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+		object-fit: contain;
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 1rem;
+		right: 1.5rem;
+		background: none;
+		border: none;
+		font-size: 2rem;
+		color: white;
+		cursor: pointer;
+	}
+
+	.lightbox-controls {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
 	}
 </style>

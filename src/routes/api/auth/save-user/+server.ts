@@ -33,7 +33,7 @@ export const POST = async ({ request, cookies }) => {
 			path: '/',
 			httpOnly: true,
 			sameSite: 'strict',
-			secure: false, // set to true in production
+			secure: process.env.NODE_ENV === 'production',
 			maxAge: 60 * 60 * 24
 		});
 

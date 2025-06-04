@@ -1,0 +1,378 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_shared-server.js"
+    ]
+  },
+  "_Footer.js": {
+    "file": "chunks/Footer.js",
+    "name": "Footer"
+  },
+  "_Navbar.js": {
+    "file": "chunks/Navbar.js",
+    "name": "Navbar",
+    "imports": [
+      "_index2.js"
+    ]
+  },
+  "_NavbarLoggedIn.js": {
+    "file": "chunks/NavbarLoggedIn.js",
+    "name": "NavbarLoggedIn",
+    "imports": [
+      "_index2.js"
+    ]
+  },
+  "_cloudinary.js": {
+    "file": "chunks/cloudinary.js",
+    "name": "cloudinary"
+  },
+  "_db.js": {
+    "file": "chunks/db.js",
+    "name": "db"
+  },
+  "_db2.js": {
+    "file": "chunks/db2.js",
+    "name": "db"
+  },
+  "_equality.js": {
+    "file": "chunks/equality.js",
+    "name": "equality"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports",
+    "imports": [
+      "_equality.js"
+    ]
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index"
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_equality.js",
+      "_index2.js",
+      "_shared-server.js"
+    ],
+    "dynamicImports": [
+      "src/hooks.server.ts"
+    ]
+  },
+  "_jwt.js": {
+    "file": "chunks/jwt.js",
+    "name": "jwt",
+    "imports": [
+      "_shared-server.js"
+    ]
+  },
+  "_leaflet.CIGW-MKW.css": {
+    "file": "_app/immutable/assets/leaflet.CIGW-MKW.css",
+    "src": "_leaflet.CIGW-MKW.css"
+  },
+  "_poi.js": {
+    "file": "chunks/poi.js",
+    "name": "poi"
+  },
+  "_shared-server.js": {
+    "file": "chunks/shared-server.js",
+    "name": "shared-server"
+  },
+  "_userSchema.js": {
+    "file": "chunks/userSchema.js",
+    "name": "userSchema"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_equality.js",
+      "_exports.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/layout.svelte": {
+    "file": "entries/fallbacks/layout.svelte.js",
+    "name": "entries/fallbacks/layout.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/layout.svelte",
+    "isEntry": true
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_index.js",
+      "_exports.js",
+      "_shared-server.js"
+    ]
+  },
+  "src/hooks.server.ts": {
+    "file": "chunks/hooks.server.js",
+    "name": "hooks.server",
+    "src": "src/hooks.server.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_db2.js",
+      "_jwt.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.rpeGslW_.css"
+    ]
+  },
+  "src/routes/added-places/[id]/+page.server.ts": {
+    "file": "entries/pages/added-places/_id_/_page.server.ts.js",
+    "name": "entries/pages/added-places/_id_/_page.server.ts",
+    "src": "src/routes/added-places/[id]/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_db.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/added-places/[id]/+page.svelte": {
+    "file": "entries/pages/added-places/_id_/_page.svelte.js",
+    "name": "entries/pages/added-places/_id_/_page.svelte",
+    "src": "src/routes/added-places/[id]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_NavbarLoggedIn.js",
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.HfQt_KtL.css"
+    ]
+  },
+  "src/routes/api/auth/save-user/+server.ts": {
+    "file": "entries/endpoints/api/auth/save-user/_server.ts.js",
+    "name": "entries/endpoints/api/auth/save-user/_server.ts",
+    "src": "src/routes/api/auth/save-user/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_userSchema.js",
+      "_db.js",
+      "_jwt.js"
+    ]
+  },
+  "src/routes/api/pois/+server.ts": {
+    "file": "entries/endpoints/api/pois/_server.ts.js",
+    "name": "entries/endpoints/api/pois/_server.ts",
+    "src": "src/routes/api/pois/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_db.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/api/pois/[id]/favourite/+server.ts": {
+    "file": "entries/endpoints/api/pois/_id_/favourite/_server.ts.js",
+    "name": "entries/endpoints/api/pois/_id_/favourite/_server.ts",
+    "src": "src/routes/api/pois/[id]/favourite/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_db.js",
+      "_index.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/api/pois/[id]/images/[img]/delete/+server.ts": {
+    "file": "entries/endpoints/api/pois/_id_/images/_img_/delete/_server.ts.js",
+    "name": "entries/endpoints/api/pois/_id_/images/_img_/delete/_server.ts",
+    "src": "src/routes/api/pois/[id]/images/[img]/delete/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_db2.js",
+      "_cloudinary.js",
+      "_index.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/api/pois/[id]/upload/+server.ts": {
+    "file": "entries/endpoints/api/pois/_id_/upload/_server.ts.js",
+    "name": "entries/endpoints/api/pois/_id_/upload/_server.ts",
+    "src": "src/routes/api/pois/[id]/upload/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_db2.js",
+      "_poi.js",
+      "_cloudinary.js"
+    ]
+  },
+  "src/routes/charts/+page.server.ts": {
+    "file": "entries/pages/charts/_page.server.ts.js",
+    "name": "entries/pages/charts/_page.server.ts",
+    "src": "src/routes/charts/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_db.js",
+      "_poi.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/charts/+page.svelte": {
+    "file": "entries/pages/charts/_page.svelte.js",
+    "name": "entries/pages/charts/_page.svelte",
+    "src": "src/routes/charts/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_NavbarLoggedIn.js",
+      "_Footer.js"
+    ]
+  },
+  "src/routes/favourites/+page.server.ts": {
+    "file": "entries/pages/favourites/_page.server.ts.js",
+    "name": "entries/pages/favourites/_page.server.ts",
+    "src": "src/routes/favourites/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_db.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/favourites/+page.svelte": {
+    "file": "entries/pages/favourites/_page.svelte.js",
+    "name": "entries/pages/favourites/_page.svelte",
+    "src": "src/routes/favourites/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_NavbarLoggedIn.js",
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/leaflet.CIGW-MKW.css"
+    ]
+  },
+  "src/routes/login/+page.server.ts": {
+    "file": "entries/pages/login/_page.server.ts.js",
+    "name": "entries/pages/login/_page.server.ts",
+    "src": "src/routes/login/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_userSchema.js",
+      "_db.js",
+      "_jwt.js"
+    ]
+  },
+  "src/routes/login/+page.svelte": {
+    "file": "entries/pages/login/_page.svelte.js",
+    "name": "entries/pages/login/_page.svelte",
+    "src": "src/routes/login/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_Navbar.js",
+      "_Footer.js"
+    ]
+  },
+  "src/routes/logout/+server.ts": {
+    "file": "entries/endpoints/logout/_server.ts.js",
+    "name": "entries/endpoints/logout/_server.ts",
+    "src": "src/routes/logout/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/pois/+page.server.ts": {
+    "file": "entries/pages/pois/_page.server.ts.js",
+    "name": "entries/pages/pois/_page.server.ts",
+    "src": "src/routes/pois/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_db.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/pois/+page.svelte": {
+    "file": "entries/pages/pois/_page.svelte.js",
+    "name": "entries/pages/pois/_page.svelte",
+    "src": "src/routes/pois/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_Footer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.96XhalEG.css",
+      "_app/immutable/assets/leaflet.CIGW-MKW.css"
+    ]
+  },
+  "src/routes/pois/add/+page.server.ts": {
+    "file": "entries/pages/pois/add/_page.server.ts.js",
+    "name": "entries/pages/pois/add/_page.server.ts",
+    "src": "src/routes/pois/add/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_db.js",
+      "_poi.js"
+    ]
+  },
+  "src/routes/pois/add/+page.svelte": {
+    "file": "entries/pages/pois/add/_page.svelte.js",
+    "name": "entries/pages/pois/add/_page.svelte",
+    "src": "src/routes/pois/add/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_NavbarLoggedIn.js",
+      "_Footer.js"
+    ]
+  },
+  "src/routes/signup/+page.server.ts": {
+    "file": "entries/pages/signup/_page.server.ts.js",
+    "name": "entries/pages/signup/_page.server.ts",
+    "src": "src/routes/signup/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_userSchema.js",
+      "_db.js",
+      "_jwt.js"
+    ]
+  },
+  "src/routes/signup/+page.svelte": {
+    "file": "entries/pages/signup/_page.svelte.js",
+    "name": "entries/pages/signup/_page.svelte",
+    "src": "src/routes/signup/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_Navbar.js",
+      "_Footer.js"
+    ]
+  }
+}
