@@ -1,7 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';
 import { connectToDatabase } from '$lib/server/db';
-import { createToken } from '$lib/server/auth';
+import { createToken } from '$lib/server/jwt';
 
 
 import mongoose from 'mongoose';
