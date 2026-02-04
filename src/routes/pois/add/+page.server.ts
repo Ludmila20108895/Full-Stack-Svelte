@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 
 import type { Actions, PageServerLoad } from './$types';
-import { connectToDatabase } from '$lib/db';
+import { connectToDatabase } from '$lib/server/db';
 import { Poi } from '$lib/server/models/poi';
 
 export const load: PageServerLoad = async ({ url, locals }) => {
