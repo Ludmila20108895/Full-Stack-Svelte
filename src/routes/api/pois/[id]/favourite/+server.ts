@@ -1,4 +1,4 @@
-import { connectToDatabase } from '$lib/db';
+import { connectToDatabase } from '$lib/server/db';
 import type { RequestHandler } from './$types';
 import { redirect } from '@sveltejs/kit';
 import { Poi } from '$lib/server/models/poi';
