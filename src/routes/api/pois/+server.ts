@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { connectToDatabase } from '$lib/db';
+import { connectToDatabase } from '$lib/server/db';
 import { Poi } from '$lib/server/models/poi';
 
 // Define the Poi model schema
