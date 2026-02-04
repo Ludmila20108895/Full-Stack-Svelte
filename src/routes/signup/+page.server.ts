@@ -1,5 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { connectToDatabase, userSchema } from '$lib';
+import { connectToDatabase } from '$lib/server/db';
+import { userSchema } from '$lib/server/validation/userSchema';
+
 
 import bcrypt from 'bcryptjs';
 
