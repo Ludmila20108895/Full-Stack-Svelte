@@ -1,6 +1,6 @@
 // src/routes/pois/+page.server.ts
 import { redirect } from '@sveltejs/kit';
-import { connectToDatabase } from '$lib/db';
+import { connectToDatabase } from '$lib/server/db';
 import { Poi } from '$lib/server/models/poi';
 
 export const load = async ({ locals }) => {
