@@ -1,10 +1,9 @@
 import { connectToDatabase } from '$lib/server/db'; // Import the database connection utility
-import { verifyToken } from '$lib/jwt'; // Import the JWT verification utility
+import { verifyToken } from '$lib/server/jwt'; // Import the JWT verification utility
 import type { Handle } from '@sveltejs/kit'; // Import the Handle type from SvelteKit for type safety
-import 'dotenv/config';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	// Connect to the database before handling the request
+	// Ensure DB connection is ready
 	await connectToDatabase();
 
 	const token = event.cookies.get('jwt'); // Retrieve the JWT from cookies
