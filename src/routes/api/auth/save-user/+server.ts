@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { connectToDatabase } from '$lib/server/db';
-import { createToken } from '$lib/server/auth';
+import { createToken } from '$lib/server/jwt';
 import { User } from '$lib/server/models/user';
 
 export const POST = async ({ request, cookies }) => {
