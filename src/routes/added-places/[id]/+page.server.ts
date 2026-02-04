@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { error, redirect } from '@sveltejs/kit';
-import { connectToDatabase } from '$lib/db';
+import { connectToDatabase } from '$lib/server/db';
 
 import { Poi } from '$lib/server/models/poi';
 import { getWeather } from '$lib/server/weather';
