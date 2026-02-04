@@ -1,5 +1,5 @@
 // This file initializes Firebase and exports the auth and GitHub provider instances
-import { connectToDatabase } from '$lib/db';
+import { connectToDatabase } from '$lib/server/db';
 import { Poi } from '$lib/server/models/poi';
 import { redirect } from '@sveltejs/kit';
 
