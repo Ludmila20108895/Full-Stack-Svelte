@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { connectToDatabase, createToken } from '$lib';
+import { connectToDatabase } from '$lib/server/db';
+import { createToken } from '$lib/server/auth';
 import { User } from '$lib/server/models/user';
 
 export const POST = async ({ request, cookies }) => {
@@ -26,15 +27,15 @@ export const POST = async ({ request, cookies }) => {
 		}
 
 		// Generate JWT token
-		const token = createToken({ id: user._id, email: user.email });
+		const token = createToken({ id: user._id.toString(), email: user.email });
 
 		// Set token as cookie
 		cookies.set('jwt', token, {
 			path: '/',
 			httpOnly: true,
 			sameSite: 'strict',
-			secure: process.env.NODE_ENV === 'production',
-			maxAge: 60 * 60 * 24
+			secure: true, //vercel is always https in production
+			maxAge: 60 * 60 * 24 //1 day
 		});
 
 		return json({ success: true });
