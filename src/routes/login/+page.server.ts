@@ -1,6 +1,8 @@
 import { fail, redirect } from '@sveltejs/kit';
 import bcrypt from 'bcryptjs';
-import { connectToDatabase, createToken } from '$lib';
+import { connectToDatabase } from '$lib/server/db';
+import { createToken } from '$lib/server/auth';
+
 
 import mongoose from 'mongoose';
 import type { RequestEvent } from '@sveltejs/kit';
@@ -45,7 +47,7 @@ export const actions = {
 			path: '/',
 			httpOnly: true,
 			sameSite: 'strict',
-			secure: false, // change to true in production
+			secure: true, // change to true in production
 			maxAge: 60 * 60 * 24 // 1 day
 		});
 
